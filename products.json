@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Snorlax keycap",
+        "price": 20,
+        "image": "img/product1.png"
+    },
+    {
+        "id": 2,
+        "name": "Koi keycap",
+        "price": 25,
+        "image": "img/product2.png"
+    },
+    {
+        "id": 3,
+        "name": "Mt keycap",
+        "price": 20,
+        "image": "img/product3.png"
+    },
+    {
+        "id": 4,
+        "name": "Lion keycap",
+        "price": 18,
+        "image": "img/product4.png"
+    },
+    {
+        "id": 5,
+        "name": "Melody keycap",
+        "price": 70,
+        "image": "img/product5.png"
+    },
+    {
+        "id": 6,
+        "name": "Astraunt keycap",
+        "price": 17,
+        "image": "img/product6.png"
+    },
+    {
+        "id": 7,
+        "name": "Bun keycap",
+        "price": 15,
+        "image": "img/product7.png"
+    },
+    {
+        "id": 8,
+        "name": "JP keycap",
+        "price": 35,
+        "image": "img/product8.png"
+    }
+]
