@@ -139,7 +139,8 @@
 .social-icons{
     float: left;
     margin-left: 25px;
-    margin-top: 25px;
+    margin-top: 0px;
+    
 }
 
 .social-icons img{
@@ -147,24 +148,27 @@
     height: 50px;
     transition: 0.5s ease;
     margin: 0 5px;
+    -webkit-filter: brightness(50%);
+
 }
 
 .social-icons img:hover{
     position: relative;
-    transform: scale(1.5);
+    transform: scale(1.3);
     border-radius: 12px;
 }
 
 footer{
-    line-height: 50px;
+    
+    line-height: -10px;
     text-align: center;
-    background-color: #353432;
+    
 }
 
 .footer p{
-    float: right;
-    margin-top: 25px;
-    margin-right: 20px;
+    float: left;
+    margin-top: 33px;
+    font-size: 12px;
 }
 
 
@@ -174,6 +178,7 @@ footer{
     margin: auto;
     text-align: center;
     padding-top: 100px;
+    margin-bottom: 190px;
     transition: transform 0.5s;
 }
 
@@ -209,11 +214,11 @@ footer{
 }
 
 .listProduct .item button{
-    background-color: white;
-    color: rgb(24, 24, 23);
+    background-color: #353432;
+    color: beige;
     padding: 5px 10px;
     margin-top: 10px;
-    border-radius: 20px;
+    border-radius: 10px;
 }
 
 .cartTab{
@@ -314,6 +319,14 @@ body.showCart .container{
     font-size: 20px;
 }
 
+.about {
+    margin: 18%;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    margin-bottom: 431px;
+}
+
 .contact p {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
@@ -322,7 +335,7 @@ body.showCart .container{
 }
 
 .contact img {
-    padding-bottom: 15px;
+    padding-bottom: 0px;
     width: 100px;
 
 }

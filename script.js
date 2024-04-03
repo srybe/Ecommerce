@@ -8,6 +8,7 @@ let iconCartSpan = document.querySelector('.cart span');
 let listProducts = [];
 let carts = [];
 
+
 iconCart.addEventListener('click', () => {
         body.classList.toggle('showCart')
     }
@@ -72,9 +73,9 @@ const addCartToHTML = () => {
     let totalQuantity = 0;
     if (carts.length > 0) {
         carts.forEach(cart => {
-            totalQuantity = totalQuantity + cart.quantity;
+            totalQuantity += cart.quantity;
             let newCart = document.createElement('div');
-            newCart.classList.add('item'); // Wrap 'item' in quotes
+            newCart.classList.add('item');
 
             // Find the corresponding product information
             let positionProduct = listProducts.findIndex((value) => value.id == cart.product_id);
@@ -86,22 +87,47 @@ const addCartToHTML = () => {
                     <img src="${info.image}" alt="">
                 </div>
                 <div class="name">
-                    ${info.name} <!-- Use ${info.name} to display the product name -->
+                    ${info.name}
                 </div>
                 <div class="totalPrice">
-                    $${info.price * cart.quantity} <!-- Calculate total price -->
+                    $${info.price * cart.quantity}
                 </div>
                 <div class="quantity">
                     <span class="minus">&lt;</span>
-                    <span>${cart.quantity}</span>
+                    <span class="quantity">${cart.quantity}</span>
                     <span class="plus">&gt;</span>
                 </div>
             `;
+
+            // Add event listener for decreasing quantity
+            newCart.querySelector('.minus').addEventListener('click', () => {
+                if (cart.quantity > 1) {
+                    cart.quantity--;
+                    updateCart();
+                } else {
+                    // If quantity is already at 1, consider removing the item from the cart
+                    carts = carts.filter(item => item.product_id !== cart.product_id);
+                    updateCart();
+                }
+            });
+            
+
+            // Add event listener for increasing quantity
+            newCart.querySelector('.plus').addEventListener('click', () => {
+                cart.quantity++;
+                updateCart();
+            });
 
             listCartHTML.appendChild(newCart);
         });
     }
     
+};
+
+// Function to update cart display after quantity change
+const updateCart = () => {
+    addCartToHTML();
+    addCartToMemory();
 };
 
 const initApp = () => {
@@ -113,7 +139,7 @@ const initApp = () => {
         addDataToHTML();
     })
     if(localStorage.getItem('cart')){
-        cart = JSON.parse(localStorage.getItem('cart'));
+        carts = JSON.parse(localStorage.getItem('cart'));
         addCartToHTML();
     }
 }
