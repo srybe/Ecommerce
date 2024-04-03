@@ -1,0 +1,3 @@
+1. Move the footer and anchor it to the right
+2. Change the icon ex. $ cart and 3 dots for setting
+3. change the social media icons color try using svg and use lighter black smaller font-size for footer
